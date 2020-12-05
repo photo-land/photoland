@@ -2,15 +2,19 @@
 @media screen and (max-width: 800px) {
     * {
         font-family: 'Saira', sans-serif;
+
     }
     body {
         padding: 0;
         margin: 0;
+       
         background: black;
         justify-content: center;
         align-items: center;
         font-family: 'Saira', sans-serif;
+        
     }
+    
     #header {
         background: white;
         display: flex;
@@ -20,7 +24,6 @@
         align-items: center;
     }
     #back {
-        margin: 1vh;
         border: 3px solid black;
         border-radius: 50%;
         width: 6vh;
@@ -83,11 +86,11 @@
         flex-flow: row;
     }
     .btn {
-        width: 45vw;
+        width: 65vw;
         height: 9vh;
         margin: 2.5vw;
         border-radius: 15px;
-        font-size: 6vh;
+        font-size: 4vh;
     }
     #Photo {
         display: none;
@@ -96,12 +99,15 @@
         color: black;
         background: white;
         border-radius: 15px;
-        text-align: center;
         border: 2px solid white;
         margin-top: 5%;
         width: 90vw;
         height: 30vh;
         cursor: pointer;
+        display: flex;
+        border: 4px rgb(167, 159, 159) solid;
+        justify-content: center;
+        align-items: center;
     }
      ::placeholder {
         font-size: 3vh;

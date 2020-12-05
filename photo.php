@@ -24,14 +24,7 @@
     </div>
     <div id="main">
         <?php 
-            $servername="localhost";
-            $serverpass="";
-            $serveruser="root"; 
-            $dbname="photoland";    
-            $conn = mysqli_connect($servername, $serveruser, $serverpass, $dbname);
-            if(!$conn){
-                die("Błąd połączenia: ". mysqli_connect_error());
-            };      
+            include_once("connect.php");    
         ?>
         <!-- zdjęice + Tytuł -->
         <div id="img">
@@ -45,21 +38,31 @@
         </div>
         <!-- Gwiazdy -->
         <div id="star">
-            <span class="material-icons star">
-                star
-            </span>
-            <span class="material-icons star">
-                star
-            </span>
-            <span class="material-icons star">
-                star
-            </span>
-            <span class="material-icons star">
-                star_border
-            </span>
-            <span class="material-icons star">
-                star_border
-            </span>
+        <?php 
+            $id = $_GET['id'];
+            $query_star = $conn -> query("SELECT (`all_recents`/`count_recent`) AS AVG FROM recents WHERE `id_photo` = '".$id."'");
+            if(mysqli_num_rows($query_star)!=0){
+                $row_star = mysqli_fetch_assoc($query_star);
+                $count_star = $row_star["AVG"];
+            } else {
+                $count_star = 0;
+            }
+            for($i=1;$i<=5;$i++){
+                if($i<=$count_star) : ?>
+                <a href="<?php echo $i.".php?id=".$id?>">
+                    <span style="text-decoration: none; color: rgb(194, 194, 64);" class="material-icons star">
+                        star
+                    </span>
+                </a>
+            <?php else : ?>
+                <a href="<?php echo $i.".php?id=".$id?>">
+                    <span style="text-decoration: none; color: rgb(194, 194, 64);" class="material-icons star">
+                        star_border
+                    </span>
+                </a>
+            <?php endif;
+                } 
+                ?> 
         </div>
         <!-- email + komentarz -->
         <div id="form">

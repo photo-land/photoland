@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pl">
 
 <head>
@@ -13,9 +13,11 @@
 <body id="body">
     <div id="main-container">
         <div id="header">
+            
 
         </div>
         <img id="logo" src="photoland.png" alt="logo">
+        <div id="timer">00:00:00</div>
         <div id="menu-icon">
             <input type="checkbox" onclick="myFunction()" id="klik">
             <label for="klik" class="btna">
@@ -42,35 +44,32 @@
                 </a>
             </div>
         </div>
-        <div id="photo-container">
-            <?php 
-                $servername="localhost";
-                $serverpass="";
-                $serveruser="root"; 
-                $dbname="photoland";    
-                $conn = mysqli_connect($servername, $serveruser, $serverpass, $dbname);
-                if(!$conn){
-                    die("Błąd połączenia: ". mysqli_connect_error());
-                };      
-                $query = $conn -> query("SELECT * FROM `photos` WHERE `checked` = '1' ORDER BY `add_date` DESC");
-                while($row = mysqli_fetch_assoc($query)){
-            ?>
-            <div id="photo">
-                <img src="img/<?php echo $row["photo"];?>" alt="<?php echo $row["title"];?>">
-                <a style="text-decoration: none; color:black;" href="photo.php?id=<?php echo $row["id_photo"];?>">
-                    <div id="add">
-                        <p style="display: none"><?php echo $row["id_photo"];?></p>
-                        <i style="text-decoration: none; color:black;" class="fas fa-plus"></i>
+        <div id="background">
+            <div id="photo-container">
+                <?php 
+                    include_once("connect.php");
+                    $query = $conn -> query("SELECT * FROM `photos` WHERE `checked` = '1' ORDER BY `add_date` DESC");
+                    while($row = mysqli_fetch_assoc($query)){
+                ?>
+                <div id="photo">
+                    <img src="img/<?php echo $row["photo"];?>" alt="<?php echo $row["title"];?>">
+                    <a style="text-decoration: none; color:black;" href="photo.php?id=<?php echo $row["id_photo"];?>">
+                        <div id="add">
+                            <p style="display: none"><?php echo $row["id_photo"];?></p>
+                            <i style="text-decoration: none; color:black;" class="fas fa-plus"></i>
+                        </div>
+                    </a>
+                    <div id="title">
+                        <span><?php echo $row["title"];?></span>
                     </div>
-                </a>
-                <div id="title">
-                    <span><?php echo $row["title"];?></span>
                 </div>
-            </div>
-            <?php } ?>
+                <?php } ?>
+                </div>
+        </div>
+        
         </div>
     </div>
-
+    <script src="timer.js"></script>
     <script src="hamburger.js"></script>
 </body>
 

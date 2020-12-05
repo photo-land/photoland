@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     * {
         margin: 0;
         padding: 0;
@@ -19,6 +19,9 @@
         background-color: white;
         overflow-x: hidden;
         position: relative;
+    }
+    #timer{
+        display: none;
     }
     #photo-container {
         width: 100%;
@@ -74,6 +77,7 @@
         left: 8vw;
         width: min(100vw, 120px);
     }
+    
     #header {
         width: 200%;
         height: 35vh;
@@ -159,5 +163,199 @@
     }
     .meni.active:after {
         transform: translateY(-12px) rotate(-225deg);
+    }
+}
+@media screen and (min-width: 1100px) {
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Saira', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    overflow-x: hidden;
+    text-decoration: none;
+}
+#main-container {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+#header {
+    width: 200%;
+    height: 100vh;
+    background-color: black;
+    transform: rotate(175deg);
+    position: absolute;
+    left: -70vw;
+    top: -80vh;
+}
+#logo {
+    position: absolute;
+    top: 4vh;
+    left: 4vw;
+    width: min(100vw, 120px);
+    z-index: 20;
+}
+#timer
+    {
+        color: white;
+        position: absolute;
+        z-index: 40;
+        left: 45vw;
+        top: 4vh;
+        transform: rotate(-5deg);
+        font-size: 6vh;
+    }
+    #menu-icon {
+        position: absolute;
+        right: 5vw;
+        top: 5vh;
+        background-color: rgb(255, 255, 255);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+    }
+    #klik {
+        display: none;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .meni {
+        width: 40px;
+        cursor: pointer;
+    }
+    .meni .line,
+    .meni:before,
+    .meni:after {
+        height: 3px;
+        display: block;
+        background-color: black;
+        content: "";
+        margin: 9px 0;
+        transition: all 0.3s;
+    }
+    .meni.active:before {
+        transform: translateY(12px) rotate(225deg);
+    }
+    .meni.active .line {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    .meni.active:after {
+        transform: translateY(-12px) rotate(-225deg);
+    }
+    #menu {
+        position: absolute;
+        right: 0vw;
+        top: -200vh;
+        width: 20%;
+        height: 100vh;
+        background-color: rgb(0, 0, 0);
+        z-index: 1;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        text-align: center;
+        transition: 0.8s;
+    }
+    #cont-container {
+        width: 100%;
+    }
+    .content {
+        width: 80%;
+        height: 4vh;
+        border-bottom: 3px white solid;
+        color: white;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10vh;
+        overflow: hidden;
+        font-size: 3vh;
+    }
+    .content:hover {
+        
+        color: rgb(167, 206, 77);
+        border: 3px rgb(167, 206, 77) solid;
+        transition: 0.8s;
+    }
+    #photo-container {
+        width: 100%;
+        overflow: visible;
+        height: auto;
+        position: relative;
+        margin-top: 35vh;
+    }
+    #photo #title {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 20vh;
+        background-color: rgba(0, 0, 0, 0.428);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 5vh;
+    }
+    #photo #add {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        
+        top: -3vh;
+        right: -2vw;
+        border-radius: 50%;
+        background-color: white;
+        border: 6px black solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4vh;
+    }
+    #photo #add i {
+        
+        overflow: hidden;
+        
+    }
+    #photo {
+        width: 100%;
+        height: 80vh;
+        overflow: visible;
+        position: relative;
+        -webkit-box-shadow: 0px 15px 32px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 15px 32px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 15px 32px -1px rgba(0,0,0,0.75);
+       margin-left: auto;
+       margin-right: auto;
+      
+       
+        margin-top: 15vh;
+    }
+    #photo img {
+        width: 100%;
+        height: 80vh;
+    }
+    #background
+    {
+        width: 70%;
+        height: auto;
+        background-color: rgb(223, 223, 223);
+        -webkit-box-shadow: 0px 2px 69px 75px rgba(223,223,223,1);
+-moz-box-shadow: 0px 2px 69px 75px rgba(223,223,223,1);
+box-shadow: 0px 2px 69px 75px rgba(223,223,223,1);
+        overflow: visible;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
