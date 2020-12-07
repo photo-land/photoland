@@ -31,7 +31,9 @@
             </div>
             <img src="character1.jpg" alt="Character 1">
         </div>
+        <div id="kreska"></div>
         <!-- Drugi opis -->
+
         <div id="div2">
             <img src="character2.jpg" alt="Character 2">
             <div class="txt">

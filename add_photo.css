@@ -1,28 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
-@media screen and (max-width: 800px) {
-    * {
-        font-family: 'Saira', sans-serif;
+* {
+    font-family: 'Saira', sans-serif;
+}
 
-    }
-    body {
-        padding: 0;
-        margin: 0;
-       
-        background: black;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Saira', sans-serif;
-        
-    }
-    
-    #header {
-        background: white;
-        display: flex;
-        flex-flow: row;
-        width: 100vw;
-        height: 10vh;
-        align-items: center;
-    }
+body {
+    padding: 0;
+    margin: 0;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Saira', sans-serif;
+}
+
+#header {
+    background: white;
+    display: flex;
+    flex-flow: row;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+}
+
+@media screen and (max-width: 800px) {
     #back {
         border: 3px solid black;
         border-radius: 50%;
@@ -111,5 +110,98 @@
     }
      ::placeholder {
         font-size: 3vh;
+    }
+    #add_photo_desktop,
+    #kreska_desktop {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    #back {
+        border: 3px solid black;
+        border-radius: 50%;
+        width: 6vh;
+        height: 6vh;
+        margin-left: 1%;
+    }
+    #arrow {
+        position: absolute;
+        font-size: 6vh;
+        color: black;
+    }
+    #logo {
+        position: absolute;
+        left: 38%;
+    }
+    #email_title {
+        display: flex;
+        flex-flow: column;
+        width: 40vw;
+        margin-left: 10%;
+    }
+    #email,
+    #title {
+        margin: 4%;
+        width: 90%;
+        height: 8vh;
+        border-radius: 15px;
+    }
+    #add_photo,
+    #kreska {
+        display: none;
+    }
+    #add_photo_desktop {
+        color: white;
+        font-size: 7vh;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
+    #img_desktop {
+        font-size: 8vh;
+        color: white;
+    }
+    #Photo {
+        display: none;
+    }
+    .custom-file-upload {
+        position: absolute;
+        top: 30%;
+        right: 10%;
+        color: black;
+        background: white;
+        border-radius: 15px;
+        border: 2px solid white;
+        margin-top: 5%;
+        width: 40vw;
+        height: 30vh;
+        cursor: pointer;
+        display: flex;
+        border: 4px rgb(167, 159, 159) solid;
+        justify-content: center;
+        align-items: center;
+    }
+    #kreksa_desktop {
+        margin-left: 11%;
+        width: 80vw;
+        height: 1vh;
+        background-color: white;
+        margin-bottom: 2%;
+    }
+    #button {
+        margin-top: 3%;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn {
+        width: 30vw;
+        height: 9vh;
+        margin: 2.5vw;
+        border-radius: 15px;
+        font-size: 4vh;
     }
 }

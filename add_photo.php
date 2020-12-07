@@ -24,10 +24,21 @@
         <img src="row_black_photoland300px.png" alt="Photo - Land" id="logo">
     </div>
     <!-- Formularz -->
-    <form action="" method="POST" enctype="multipart/form-data">
-        <input type="email" name="email" id="email" placeholder="E-mail">
-        <input type="text" name="title" id="title" placeholder="Title">
-        <!-- Napis "Dodaj zdjęcie" -->
+    <!-- Napis "Dodaj zdjęcie" Desktop -->
+    <div id="add_photo_desktop">
+                <span id="img_desktop" class="material-icons">
+                    image
+                </span>
+                <p>Dodaj Zdjęcie</p>
+    </div>
+    <div id="kreksa_desktop"></div>
+    
+    <form action="" method="POST" enctype="multipart/form-data">  
+        <div id="email_title">
+            <input type="email" name="email" id="email" placeholder="E-mail">
+            <input type="text" name="title" id="title" placeholder="Title">
+        </div>
+        <!-- Napis "Dodaj zdjęcie" Mobile -->
         <div id="add_photo">
             <span id="img" class="material-icons">
                 image
@@ -113,7 +124,7 @@
                 if (move_uploaded_file($_FILES["Photo"]["tmp_name"], $target_file)) {
                     ?>
                     <script>
-                        document.getElementById('sended_photo').innerHTML += "<p style='color:red'> Plik ". <?php> htmlspecialchars( basename( $_FILES["Photo"]["name"]))?> ." został przesłany.</p>";
+                        document.getElementById('sended_photo').innerHTML += "<p style='color:red'> Plik ". <?php htmlspecialchars( basename( $_FILES["Photo"]["name"]))?> ." został przesłany.</p>";
                     </script>
                     <?php
                     // echo "<p style='color:white'> Plik ". htmlspecialchars( basename( $_FILES["Photo"]["name"])). " został przesłany.</p>";

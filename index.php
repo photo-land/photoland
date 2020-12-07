@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </label>
-
+            
 
         </div>
         <div id="blur"></div>
@@ -44,23 +44,38 @@
                 </a>
             </div>
         </div>
+        
         <div id="background">
+        
             <div id="photo-container">
                 <?php 
                     include_once("connect.php");
                     $query = $conn -> query("SELECT * FROM `photos` WHERE `checked` = '1' ORDER BY `add_date` DESC");
+                    
                     while($row = mysqli_fetch_assoc($query)){
                 ?>
+               
                 <div id="photo">
+                <div id="pinezka">
+                    <img src="pinezka.png" alt="">
+                </div>
+                <div id="date" style=" position:absolute; margin-left: -27vw; top:30vh; border-bottom: 3px solid black; font-size:5vh;transform: rotate(270deg);"><?php echo $row["add_date"];?></div>
                     <img src="img/<?php echo $row["photo"];?>" alt="<?php echo $row["title"];?>">
                     <a style="text-decoration: none; color:black;" href="photo.php?id=<?php echo $row["id_photo"];?>">
                         <div id="add">
                             <p style="display: none"><?php echo $row["id_photo"];?></p>
-                            <i style="text-decoration: none; color:black;" class="fas fa-plus"></i>
+                            <i style="text-decoration: none;"  class="fas fa-comment-dots"></i>
                         </div>
                     </a>
                     <div id="title">
                         <span><?php echo $row["title"];?></span>
+                        <span id="add_mail"><?php echo $row["email"];?></span>
+                        <?php 
+                        $id_photo = $row['id_photo'];
+                        $query_licz = $conn -> query("SELECT * FROM `photos` JOIN `comments` ON `photos`.`id_photo` = `comments`.`id_photo` WHERE `comments`.`id_photo` = $id_photo"); 
+                        $licz = mysqli_num_rows($query_licz);
+                        ?>
+                        <span id="count_comments">Komentarzy: <?php echo $licz ?></span>
                     </div>
                 </div>
                 <?php } ?>
